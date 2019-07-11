@@ -14,9 +14,8 @@ interface PrintService {
     @POST("LotteryPrinterUsb/master/app/src/main/assets/print_config.json")
     fun postPrintConfig(): Call<ResponseBody>
 
-    //不行
-    @POST("api/weather/city/101030100")
-    fun postWeather(): Call<ResponseBody>
+    @GET("api/weather/city/{cityId}")
+    fun getWeather(@Path("cityId") cityId: String): Call<ResponseBody>
 
     /*
     val url = "${BuildConfig.BASE_ACTION}/rcrobotsite/rest/web/api/action/mb/mobileApi"
