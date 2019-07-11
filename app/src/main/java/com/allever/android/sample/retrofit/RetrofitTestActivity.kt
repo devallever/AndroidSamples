@@ -6,15 +6,14 @@ import com.allever.android.sample.retrofit.bean.PrintData
 import com.allever.lib.common.app.BaseActivity
 import com.allever.lib.common.util.DLog
 import com.allever.lib.common.util.ToastUtils
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.ResponseBody
+import okhttp3.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
+import java.util.HashMap
 
 class RetrofitTestActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +36,108 @@ class RetrofitTestActivity : BaseActivity() {
 //        downloadBigFile()
         //GET异步添加header
 //        getAsyncRequestWithHeader()
-        getAsyncRequestWithHeader2()
+//        getAsyncRequestWithHeader2()
+        //POST异步上传图片(表单: 文件和文本)
+//        postAsyncUploadFile()
+//        postAsyncUploadFile2()
+//        postAsyncUploadFile3()
+    }
+
+    private fun postAsyncUploadFile3() {
+        val body = RequestBody.create(MediaType.parse("multipart/form-data"), ByteArray(1024))
+        //MultipartBody.Part part1 = MultipartBody.Part.createFormData("part1","",body);
+        val photos = HashMap<String, RequestBody>()
+        photos["part1\"; filename=\"part1.png"] = body
+        photos["part2\"; filename=\"part2.png"] = body
+        photos["part3\"; filename=\"part3.png"] = body
+        photos["part4\"; filename=\"part4.png"] = body
+
+        val content = RequestBody.create(null, "今天天气不错")
+        val longitude = RequestBody.create(null, "113.0002")
+        val latitude = RequestBody.create(null, "22.0001")
+        val city = RequestBody.create(null, "广州")
+
+        Retrofit.Builder()
+                .baseUrl("http://27.54.249.252:8080/SocialServer/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(UserService::class.java)
+                .addNews(photos,  content, longitude, latitude, city)
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
+    }
+
+    private fun postAsyncUploadFile2() {
+        val body = RequestBody.create(MediaType.parse("multipart/form-data"), ByteArray(1024))
+        //part1
+        val part1 = MultipartBody.Part.createFormData("part1", "", body)//partName, unKnow, requestBody
+        val part2 = MultipartBody.Part.createFormData("part2", "", body)
+        val part3 = MultipartBody.Part.createFormData("part3", "", body)
+
+        val content = RequestBody.create(null, "今天天气不错")
+        val longitude = RequestBody.create(null, "113.0002")
+        val latitude = RequestBody.create(null, "22.0001")
+        val city = RequestBody.create(null, "广州")
+
+        Retrofit.Builder()
+                .baseUrl("http://27.54.249.252:8080/SocialServer/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(UserService::class.java)
+                .addNews(part1, part2, part3, null, null, null, content, longitude, latitude, city)
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
+
+    }
+
+    private fun postAsyncUploadFile() {
+        val body = RequestBody.create(MediaType.parse("multipart/form-data"), ByteArray(1024))
+        //head_img 是 partName  filename
+        val part = MultipartBody.Part.createFormData("head_img", "head_img", body)
+
+        val description = RequestBody.create(MediaType.parse("multipart/form-data"), "修改头像")
+
+        Retrofit.Builder()
+                .baseUrl("http://27.54.249.252:8080/SocialServer/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(UserService::class.java)
+                .modifyHead(part, description)
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
     }
 
     private fun getAsyncRequestWithHeader2() {
