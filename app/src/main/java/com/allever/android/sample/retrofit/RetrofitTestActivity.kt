@@ -22,10 +22,33 @@ class RetrofitTestActivity : BaseActivity() {
 //        getAsyncRequest()
         //GET同步请求
         //getSyncRequest()
-        //Post异步请求
-        postAsyncRequest()
+        //Post异步请求Field
+//        postAsyncRequest()
+        //GET异步请求Query
+        getAsyncRequestQuery()
     }
 
+    private fun getAsyncRequestQuery() {
+        Retrofit.Builder()
+                .baseUrl("http://rc.interlib.com.cn:8088/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(PrintService::class.java)
+                .getActivityList("P3GD0755006")
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
+    }
     private fun postAsyncRequest() {
         Retrofit.Builder()
                 .baseUrl("http://rc.interlib.com.cn:8088/")
