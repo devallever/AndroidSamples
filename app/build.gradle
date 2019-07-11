@@ -25,4 +25,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
 }
