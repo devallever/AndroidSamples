@@ -42,4 +42,7 @@ interface PrintService {
             : Call<ResponseBody>
 
 
+    @Streaming
+    @GET("MyCoolWeather/master/app/simpleWeather1.4.apk")
+    fun downloadBigFile(): Call<ResponseBody>
 }
