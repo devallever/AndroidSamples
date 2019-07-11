@@ -18,6 +18,32 @@ class RetrofitTestActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_retrofit_test)
 
+        //GET异步请求
+        //getAsyncRequest()
+        //GET同步请求
+        getSyncRequest()
+    }
+
+    private fun getSyncRequest() {
+        Thread(Runnable {
+            val response = Retrofit.Builder()
+                    .baseUrl("https://raw.githubusercontent.com/devallever/")
+                    //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+                    .create(PrintService::class.java)
+                    .printConfig
+                    .execute()
+            if (response.isSuccessful) {
+                DLog.d("success content = ${response.body()?.string()}")
+            } else {
+                DLog.d("fail")
+            }
+        }).start()
+
+    }
+
+    private fun getAsyncRequest() {
         Retrofit.Builder()
                 .baseUrl("https://raw.githubusercontent.com/devallever/")
                 //要转换则需要添加addConverterFactory
