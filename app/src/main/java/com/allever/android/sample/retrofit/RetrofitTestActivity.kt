@@ -19,9 +19,33 @@ class RetrofitTestActivity : BaseActivity() {
         setContentView(R.layout.activity_retrofit_test)
 
         //GET异步请求
-        //getAsyncRequest()
+//        getAsyncRequest()
         //GET同步请求
-        getSyncRequest()
+        //getSyncRequest()
+        //Post异步请求
+        postAsyncRequest()
+    }
+
+    private fun postAsyncRequest() {
+        Retrofit.Builder()
+                .baseUrl("http://rc.interlib.com.cn:8088/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(PrintService::class.java)
+                .postActivityList("P3GD0755006")
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
     }
 
     private fun getSyncRequest() {
@@ -32,7 +56,7 @@ class RetrofitTestActivity : BaseActivity() {
 //                .addConverterFactory(GsonConverterFactory.create())
                     .build()
                     .create(PrintService::class.java)
-                    .printConfig
+                    .printConfig()
                     .execute()
             if (response.isSuccessful) {
                 DLog.d("success content = ${response.body()?.string()}")
@@ -50,7 +74,7 @@ class RetrofitTestActivity : BaseActivity() {
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(PrintService::class.java)
-                .printConfig
+                .printConfig()
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                         ToastUtils.show("onFailure")
