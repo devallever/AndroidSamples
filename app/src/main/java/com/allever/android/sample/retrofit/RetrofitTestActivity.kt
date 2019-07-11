@@ -21,7 +21,7 @@ class RetrofitTestActivity : BaseActivity() {
         Retrofit.Builder()
                 .baseUrl("https://raw.githubusercontent.com/devallever/")
                 //要转换则需要添加addConverterFactory
-                .addConverterFactory(GsonConverterFactory.create())
+//                .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(PrintService::class.java)
                 .printConfig
