@@ -6,6 +6,7 @@ import com.allever.android.sample.retrofit.bean.PrintData
 import com.allever.lib.common.app.BaseActivity
 import com.allever.lib.common.util.DLog
 import com.allever.lib.common.util.ToastUtils
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,15 +25,15 @@ class RetrofitTestActivity : BaseActivity() {
                 .build()
                 .create(PrintService::class.java)
                 .printConfig
-                .enqueue(object : Callback<PrintData> {
-                    override fun onFailure(call: Call<PrintData>, t: Throwable) {
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                         ToastUtils.show("onFailure")
                         DLog.d("onFailure")
                     }
 
-                    override fun onResponse(call: Call<PrintData>, response: Response<PrintData>) {
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
                         ToastUtils.show("onResponse")
-                        DLog.d("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
                     }
 
                 })
