@@ -1,0 +1,149 @@
+{
+  "data": [
+    {
+      "type": 0,
+      "text": "中心友好图书馆-个人借阅凭条",
+      "config": {
+        "blob": 1,
+        "align": 1,
+        "textScale": 0,
+        "underLine": 0,
+        "italic": 0,
+        "lineSpace": 40,
+        "textSpace": 0,
+        "leftMargin": 0,
+        "rightMargin": 0,
+        "qrLeftMargin": 0,
+        "qrScale": 8,
+        "imageUrl": "",
+        "tableIndexList": [
+        ],
+        "tableColumn": [
+          {
+            "data": []
+          },
+          {
+            "data": []
+          },
+          {
+            "data": []
+          }
+        ]
+      }
+    },
+    {
+      "type": 0,
+      "text": "",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "姓名：allever",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "证号：11******11",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "日期：2019/07/03 11:31:20",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "当前借阅：\t\t应还日期\t剩余天数",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "《楼》\t\t\t2019-10-31\t    3",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "《大耳朵图图》\t\t2019-10-31\t    3",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "《Android开发艺术探索》\t2019-10-31\t    3",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "《安卓源码设计模式解析》2019-10-31\t    3",
+      "config": {
+      }
+    },
+    {
+      "type": 3,
+      "text": "",
+      "config": {
+        "tableIndexList": [
+          24,
+          40
+        ],
+        "tableColumn": [
+          {
+            "data": ["当前借阅：", "《红楼梦》", "《大耳朵贴图》"]
+          },
+          {
+            "data": ["应还日期", "2019-10-30", "2019-10-30"]
+          },
+          {
+            "data": ["剩余天数", "30", "30"]
+          }
+        ]
+      }
+    },
+    {
+      "type": 0,
+      "text": "",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "亲爱的读者，您当前办证已超过 %s 天，当前已借阅 %s 册，还可借阅 %s 册，截至 %s 累计借阅图书共 %s 册，节省购书成本约 %s 元。体验更多信息内容请扫描下方二维码关注图书馆公众号。",
+      "config": {
+      }
+    },
+    {
+      "type": 0,
+      "text": "",
+      "config": {
+      }
+    },
+    {
+      "type": 1,
+      "text": "baidu.com",
+      "config": {
+        "qrLeftMargin": 26,
+        "qrScale": 8
+      }
+    },
+    {
+      "type": 0,
+      "text": "",
+      "config": {
+      }
+    },
+    {
+      "type": 2,
+      "text": "",
+      "config": {
+        "imageUrl": "https://raw.githubusercontent.com/devallever/LotteryPrinterUsb/master/app/src/main/assets/logo1.png"
+      }
+    }
+  ]
+}
