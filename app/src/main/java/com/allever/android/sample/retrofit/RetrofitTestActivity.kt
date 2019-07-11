@@ -27,9 +27,32 @@ class RetrofitTestActivity : BaseActivity() {
         //GET异步请求Query
 //        getAsyncRequestQuery()
         //GET异步请求Path动态url路径
-        getAsyncRequestPath()
+//        getAsyncRequestPath()
+        //GET异步转换url
+        getAsyncRequestUrl()
     }
 
+    private fun getAsyncRequestUrl() {
+        Retrofit.Builder()
+                .baseUrl("http://rc.interlib.com.cn:8088/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(PrintService::class.java)
+                .getWeatherWithUrl("http://t.weather.itboy.net/api/weather/city/101030100")
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
+    }
     private fun getAsyncRequestPath() {
         Retrofit.Builder()
                 .baseUrl("http://t.weather.itboy.net/")

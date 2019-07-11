@@ -17,6 +17,9 @@ interface PrintService {
     @GET("api/weather/city/{cityId}")
     fun getWeather(@Path("cityId") cityId: String): Call<ResponseBody>
 
+    @GET()
+    fun getWeatherWithUrl(@Url url: String): Call<ResponseBody>
+
     /*
     val url = "${BuildConfig.BASE_ACTION}/rcrobotsite/rest/web/api/action/mb/mobileApi"
         val parameterList = listOf(
@@ -37,4 +40,6 @@ interface PrintService {
                          @Query("deviceId") deviceId: String = "",
                          @Query("cmd") cmd: String = "listSearchActions")
             : Call<ResponseBody>
+
+
 }
