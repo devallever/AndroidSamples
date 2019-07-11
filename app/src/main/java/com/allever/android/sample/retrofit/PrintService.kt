@@ -41,6 +41,14 @@ interface PrintService {
                          @Query("cmd") cmd: String = "listSearchActions")
             : Call<ResponseBody>
 
+    //@Headers({"apikey:81bf9da930c7f9825a3c3383f1d8d766" ,"Content-Type:application/json"})
+    @Headers("Content-Type:application/json")
+    @GET("rcrobotsite/rest/web/api/action/mb/mobileApi")
+    fun getActivityListWithHeader(@Query("libcode") libcode: String,
+                        @Query("deviceId") deviceId: String = "",
+                        @Query("cmd") cmd: String = "listSearchActions")
+            : Call<ResponseBody>
+
 
     @Streaming
     @GET("MyCoolWeather/master/app/simpleWeather1.4.apk")

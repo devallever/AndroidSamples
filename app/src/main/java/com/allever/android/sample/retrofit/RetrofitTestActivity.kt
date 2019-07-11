@@ -6,12 +6,15 @@ import com.allever.android.sample.retrofit.bean.PrintData
 import com.allever.lib.common.app.BaseActivity
 import com.allever.lib.common.util.DLog
 import com.allever.lib.common.util.ToastUtils
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.IOException
 
 class RetrofitTestActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +34,67 @@ class RetrofitTestActivity : BaseActivity() {
         //GET异步转换url
 //        getAsyncRequestUrl()
         //GET异步下载大文件
-        downloadBigFile()
+//        downloadBigFile()
+        //GET异步添加header
+//        getAsyncRequestWithHeader()
+        getAsyncRequestWithHeader2()
+    }
+
+    private fun getAsyncRequestWithHeader2() {
+        Retrofit.Builder()
+                .baseUrl("http://rc.interlib.com.cn:8088/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(PrintService::class.java)
+                .getActivityListWithHeader("P3GD0755006")
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
+    }
+
+
+    private fun getAsyncRequestWithHeader() {
+        val clientBuilder = OkHttpClient.Builder()
+        clientBuilder.addInterceptor { chain ->
+            val originalRequest = chain.request()
+            val requestBuilder = originalRequest.newBuilder()
+                    .addHeader("Cookie", "JSESSIONID=456895235648524896")
+            val request = requestBuilder.build()
+
+            chain.proceed(request)
+        }
+        val okHttpClient = clientBuilder.build()
+
+        Retrofit.Builder()
+                .baseUrl("http://rc.interlib.com.cn:8088/")
+                //要转换则需要添加addConverterFactory
+//                .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClient)
+                .build()
+                .create(PrintService::class.java)
+                .getActivityList("P3GD0755006")
+                .enqueue(object : Callback<ResponseBody> {
+                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                        ToastUtils.show("onFailure")
+                        DLog.d("onFailure")
+                    }
+
+                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                        ToastUtils.show("onResponse")
+                        DLog.d("onResponse content = ${response.body()?.string()}")
+                    }
+
+                })
     }
 
     private fun downloadBigFile() {
