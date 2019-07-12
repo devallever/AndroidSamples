@@ -53,4 +53,7 @@ interface RetrofitService {
     @Streaming
     @GET("MyCoolWeather/master/app/simpleWeather1.4.apk")
     fun downloadBigFile(): Call<ResponseBody>
+
+    @POST("rcrobotsite/rest/web/api/action/mb/mobileApi")
+    fun postJson(@Body printData: PrintData): Call<ResponseBody>
 }
