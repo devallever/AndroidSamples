@@ -12,6 +12,7 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import java.lang.Exception
 
 class RxTestActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,11 @@ class RxTestActivity : BaseActivity() {
             it.onNext(1)
             it.onNext(2)
             it.onNext(3)
+            //onComplete和onError只能存在一个，当调用onComplete或者onError后，onNext不会发送
+            it.onComplete()
+            //it.onError(Exception())
+            it.onNext(4)
+            it.onNext(5)
         })
             //新建线程
             //subscribeOn 指定发布线程
