@@ -8,6 +8,7 @@ import com.allever.lib.common.util.DLog
 
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
+import io.reactivex.ObservableSource
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -15,6 +16,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Function
 import io.reactivex.internal.disposables.DisposableContainer
 import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 class RxTestActivity : BaseActivity() {
 
@@ -29,7 +31,7 @@ class RxTestActivity : BaseActivity() {
         DLog.d("onCreate mainThread: pid = $threadName")
 
         //rxJava基本用法
-        rxJavaStandard()
+//        rxJavaStandard()
         rxJavaMap()
 
     }
@@ -46,21 +48,37 @@ class RxTestActivity : BaseActivity() {
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             //原始类型可以转Any任何类型
-            .map(object : Function<Int, User> {
-                override fun apply(it: Int): User {
-                    return User(it)
+//            .map(object : Function<Int, User> {
+//                override fun apply(it: Int): User {
+//                    return User(it)
+//                }
+//            })
+            .doOnNext {
+                DLog.d("doOnNext: $it threadName = ${Thread.currentThread().name}")
+            }
+            .flatMap(object : Function<Int, ObservableSource<Any>> {
+                override fun apply(t: Int): ObservableSource<Any> {
+                    val list = mutableListOf<Any>()
+                    for (i in 1 .. 3) {
+                        list.add("i am $t for $i")
+                    }
+
+                    return Observable.fromIterable(list)
+                        .delay(100, TimeUnit.MILLISECONDS)
+                        .observeOn(AndroidSchedulers.mainThread())
                 }
+
             })
-            .subscribe(object : Observer<User> {
+            .subscribe(object : Observer<Any> {
                 override fun onSubscribe(disposable: Disposable) {
                     DLog.d("onSubscribe: threadName = ${Thread.currentThread().name}")
                     mDisposable = disposable
                     mDisposableContainer?.add(disposable)
                 }
 
-                override fun onNext(user: User) {
+                override fun onNext(user: Any) {
                     //3.
-                    DLog.d("onNext: ${user.id}")
+                    DLog.d("onNext: ${user.toString()}")
                     DLog.d("onNext: threadName = ${Thread.currentThread().name}")
                 }
 
