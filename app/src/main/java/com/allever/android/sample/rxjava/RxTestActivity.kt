@@ -22,6 +22,10 @@ class RxTestActivity : BaseActivity() {
         DLog.d("onCreate mainThread: pid = $threadName")
 
         //默认订阅发生的线程和观察的线程相同
+        //Schedulers.io() 代表io操作的线程, 通常用于网络,读写文件等io密集型的操作
+        //Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
+        //Schedulers.newThread() 代表一个常规的新线程
+        //AndroidSchedulers.mainThread()  代表Android的主线程
         Observable.create(ObservableOnSubscribe<Int> {
             //2.
             DLog.d("subscribe: threadName = ${Thread.currentThread().name}")
@@ -32,8 +36,17 @@ class RxTestActivity : BaseActivity() {
             //新建线程
             //subscribeOn 指定发布线程
             .subscribeOn(Schedulers.newThread())
+            //多个发布线程只会使用第一个，即下面这个无效
+            .subscribeOn(Schedulers.io())
+
             //observeOn 指定观察线程
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnNext {
+                DLog.d("doOnNext: $it threadName = ${Thread.currentThread().name}")
+            }
+
+            //subscribe跟最后一个观察线程, 即切换观察线程需要调用subscribe或其他接收函数
+            .observeOn(Schedulers.io())
             .subscribe(object : Observer<Int> {
                 override fun onSubscribe(disposable: Disposable) {
                     //1.
