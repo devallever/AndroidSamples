@@ -12,7 +12,6 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
-import java.lang.Exception
 
 class RxTestActivity : BaseActivity() {
 
@@ -25,6 +24,12 @@ class RxTestActivity : BaseActivity() {
         val threadName = Thread.currentThread().name
         DLog.d("onCreate mainThread: pid = $threadName")
 
+        //rxJava基本用法
+        rxJavaStandard()
+
+    }
+
+    private fun rxJavaStandard() {
         //默认订阅发生的线程和观察的线程相同
         //Schedulers.io() 代表io操作的线程, 通常用于网络,读写文件等io密集型的操作
         //Schedulers.computation() 代表CPU计算密集型的操作, 例如需要大量计算的操作
@@ -80,6 +85,5 @@ class RxTestActivity : BaseActivity() {
                     DLog.d("onComplete: threadName = ${Thread.currentThread().name}")
                 }
             })
-
     }
 }
