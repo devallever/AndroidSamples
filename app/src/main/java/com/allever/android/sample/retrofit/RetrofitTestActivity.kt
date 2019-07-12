@@ -41,7 +41,7 @@ class RetrofitTestActivity : BaseActivity() {
 //        postAsyncUploadFile2()
 //        postAsyncUploadFile3()
         //POST异步上传json
-        postJson()
+//        postJson()
     }
 
     private fun postJson() {
@@ -82,24 +82,24 @@ class RetrofitTestActivity : BaseActivity() {
         val city = RequestBody.create(null, "广州")
 
         Retrofit.Builder()
-                .baseUrl("http://27.54.249.252:8080/SocialServer/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://27.54.249.252:8080/SocialServer/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(UserService::class.java)
-                .addNews(photos,  content, longitude, latitude, city)
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(UserService::class.java)
+            .addNews(photos, content, longitude, latitude, city)
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
     private fun postAsyncUploadFile2() {
@@ -115,24 +115,24 @@ class RetrofitTestActivity : BaseActivity() {
         val city = RequestBody.create(null, "广州")
 
         Retrofit.Builder()
-                .baseUrl("http://27.54.249.252:8080/SocialServer/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://27.54.249.252:8080/SocialServer/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(UserService::class.java)
-                .addNews(part1, part2, part3, null, null, null, content, longitude, latitude, city)
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(UserService::class.java)
+            .addNews(part1, part2, part3, null, null, null, content, longitude, latitude, city)
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
 
     }
 
@@ -144,46 +144,46 @@ class RetrofitTestActivity : BaseActivity() {
         val description = RequestBody.create(MediaType.parse("multipart/form-data"), "修改头像")
 
         Retrofit.Builder()
-                .baseUrl("http://27.54.249.252:8080/SocialServer/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://27.54.249.252:8080/SocialServer/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(UserService::class.java)
-                .modifyHead(part, description)
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(UserService::class.java)
+            .modifyHead(part, description)
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
     private fun getAsyncRequestWithHeader2() {
         Retrofit.Builder()
-                .baseUrl("http://rc.interlib.com.cn:8088/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://rc.interlib.com.cn:8088/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-                .getActivityListWithHeader("P3GD0755006")
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(RetrofitService::class.java)
+            .getActivityListWithHeader("P3GD0755006")
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
 
@@ -192,7 +192,7 @@ class RetrofitTestActivity : BaseActivity() {
         clientBuilder.addInterceptor { chain ->
             val originalRequest = chain.request()
             val requestBuilder = originalRequest.newBuilder()
-                    .addHeader("Cookie", "JSESSIONID=456895235648524896")
+                .addHeader("Cookie", "JSESSIONID=456895235648524896")
             val request = requestBuilder.build()
 
             chain.proceed(request)
@@ -200,147 +200,147 @@ class RetrofitTestActivity : BaseActivity() {
         val okHttpClient = clientBuilder.build()
 
         Retrofit.Builder()
-                .baseUrl("http://rc.interlib.com.cn:8088/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://rc.interlib.com.cn:8088/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
-                .build()
-                .create(RetrofitService::class.java)
-                .getActivityList("P3GD0755006")
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .client(okHttpClient)
+            .build()
+            .create(RetrofitService::class.java)
+            .getActivityList("P3GD0755006")
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
     private fun downloadBigFile() {
         Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/devallever/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("https://raw.githubusercontent.com/devallever/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-                .downloadBigFile()
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(RetrofitService::class.java)
+            .downloadBigFile()
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.byteStream()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.byteStream()}")
+                }
 
-                })
+            })
     }
 
     private fun getAsyncRequestUrl() {
         Retrofit.Builder()
-                .baseUrl("http://rc.interlib.com.cn:8088/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://rc.interlib.com.cn:8088/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-                .getWeatherWithUrl("http://t.weather.itboy.net/api/weather/city/101030100")
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(RetrofitService::class.java)
+            .getWeatherWithUrl("http://t.weather.itboy.net/api/weather/city/101030100")
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
     private fun getAsyncRequestPath() {
         Retrofit.Builder()
-                .baseUrl("http://t.weather.itboy.net/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://t.weather.itboy.net/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-                .getWeather("101030100")
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(RetrofitService::class.java)
+            .getWeather("101030100")
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
     private fun getAsyncRequestQuery() {
         Retrofit.Builder()
-                .baseUrl("http://rc.interlib.com.cn:8088/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://rc.interlib.com.cn:8088/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-                .getActivityList("P3GD0755006")
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(RetrofitService::class.java)
+            .getActivityList("P3GD0755006")
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
     private fun postAsyncRequest() {
         Retrofit.Builder()
-                .baseUrl("http://rc.interlib.com.cn:8088/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("http://rc.interlib.com.cn:8088/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-                .postActivityList("P3GD0755006")
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(RetrofitService::class.java)
+            .postActivityList("P3GD0755006")
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 
     private fun getSyncRequest() {
         Thread(Runnable {
             val response = Retrofit.Builder()
-                    .baseUrl("https://raw.githubusercontent.com/devallever/")
-                    //要转换则需要添加addConverterFactory
+                .baseUrl("https://raw.githubusercontent.com/devallever/")
+                //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-                    .create(RetrofitService::class.java)
-                    .printConfig()
-                    .execute()
+                .build()
+                .create(RetrofitService::class.java)
+                .printConfig()
+                .execute()
             if (response.isSuccessful) {
                 DLog.d("success content = ${response.body()?.string()}")
             } else {
@@ -352,23 +352,23 @@ class RetrofitTestActivity : BaseActivity() {
 
     private fun getAsyncRequest() {
         Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/devallever/")
-                //要转换则需要添加addConverterFactory
+            .baseUrl("https://raw.githubusercontent.com/devallever/")
+            //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-                .printConfig()
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        ToastUtils.show("onFailure")
-                        DLog.d("onFailure")
-                    }
+            .build()
+            .create(RetrofitService::class.java)
+            .printConfig()
+            .enqueue(object : Callback<ResponseBody> {
+                override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                    ToastUtils.show("onFailure")
+                    DLog.d("onFailure")
+                }
 
-                    override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                        ToastUtils.show("onResponse")
-                        DLog.d("onResponse content = ${response.body()?.string()}")
-                    }
+                override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                    ToastUtils.show("onResponse")
+                    DLog.d("onResponse content = ${response.body()?.string()}")
+                }
 
-                })
+            })
     }
 }
