@@ -5,6 +5,7 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 
 public class RxTest {
     private void test() {
@@ -14,14 +15,19 @@ public class RxTest {
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
 
             }
-        }).subscribe(new Observer<Integer>() {
+        }).map(new Function<Integer, Object>() {
+            @Override
+            public Object apply(Integer integer) throws Exception {
+                return integer.toString();
+            }
+        }).subscribe(new Observer<Object>() {
             @Override
             public void onSubscribe(Disposable d) {
 
             }
 
             @Override
-            public void onNext(Integer integer) {
+            public void onNext(Object integerStr) {
 
             }
 

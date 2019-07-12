@@ -12,6 +12,7 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import io.reactivex.functions.Function
 import io.reactivex.internal.disposables.DisposableContainer
 import io.reactivex.schedulers.Schedulers
 
@@ -29,12 +30,48 @@ class RxTestActivity : BaseActivity() {
 
         //rxJava基本用法
         rxJavaStandard()
+        rxJavaMap()
 
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mDisposableContainer?.clear()
+    private fun rxJavaMap() {
+        Observable.create(ObservableOnSubscribe<Int> {
+            //2.
+            DLog.d("subscribe: threadName = ${Thread.currentThread().name}")
+            it.onNext(1)
+            it.onNext(2)
+            it.onNext(3)
+            it.onComplete()
+        })
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            //原始类型可以转Any任何类型
+            .map(object : Function<Int, User> {
+                override fun apply(it: Int): User {
+                    return User(it)
+                }
+            })
+            .subscribe(object : Observer<User> {
+                override fun onSubscribe(disposable: Disposable) {
+                    DLog.d("onSubscribe: threadName = ${Thread.currentThread().name}")
+                    mDisposable = disposable
+                    mDisposableContainer?.add(disposable)
+                }
+
+                override fun onNext(user: User) {
+                    //3.
+                    DLog.d("onNext: ${user.id}")
+                    DLog.d("onNext: threadName = ${Thread.currentThread().name}")
+                }
+
+                override fun onError(e: Throwable) {
+                    DLog.d("onError: threadName = ${Thread.currentThread().name}")
+                }
+
+                override fun onComplete() {
+                    DLog.d("onComplete: threadName = ${Thread.currentThread().name}")
+                }
+            })
     }
 
     private fun rxJavaStandard() {
@@ -94,5 +131,10 @@ class RxTestActivity : BaseActivity() {
                     DLog.d("onComplete: threadName = ${Thread.currentThread().name}")
                 }
             })
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mDisposableContainer?.clear()
     }
 }
