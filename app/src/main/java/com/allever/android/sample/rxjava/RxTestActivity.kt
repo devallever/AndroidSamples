@@ -10,12 +10,15 @@ import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import io.reactivex.internal.disposables.DisposableContainer
 import io.reactivex.schedulers.Schedulers
 
 class RxTestActivity : BaseActivity() {
 
     private var mDisposable: Disposable? = null
+    private var mDisposableContainer: CompositeDisposable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,11 @@ class RxTestActivity : BaseActivity() {
         //rxJava基本用法
         rxJavaStandard()
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mDisposableContainer?.clear()
     }
 
     private fun rxJavaStandard() {
@@ -67,6 +75,7 @@ class RxTestActivity : BaseActivity() {
                     //当observable调用subscribe后，Observer的onSubscribe最先执行，然后才执行Observable的subscribe
                     DLog.d("onSubscribe: threadName = ${Thread.currentThread().name}")
                     mDisposable = disposable
+                    mDisposableContainer?.add(disposable)
                 }
 
                 override fun onNext(integer: Int) {
