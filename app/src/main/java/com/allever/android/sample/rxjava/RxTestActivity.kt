@@ -15,6 +15,9 @@ import io.reactivex.schedulers.Schedulers
 import java.lang.Exception
 
 class RxTestActivity : BaseActivity() {
+
+    private var mDisposable: Disposable? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rxjava_test)
@@ -58,12 +61,15 @@ class RxTestActivity : BaseActivity() {
                     //1.
                     //当observable调用subscribe后，Observer的onSubscribe最先执行，然后才执行Observable的subscribe
                     DLog.d("onSubscribe: threadName = ${Thread.currentThread().name}")
+                    mDisposable = disposable
                 }
 
                 override fun onNext(integer: Int) {
                     //3.
                     DLog.d("onNext: $integer")
                     DLog.d("onNext: threadName = ${Thread.currentThread().name}")
+                    //当调用Disposable.dispose()后，不再接收onNext, 但Observable依然可以发送
+                    mDisposable?.dispose()
                 }
 
                 override fun onError(e: Throwable) {
