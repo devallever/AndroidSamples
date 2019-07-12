@@ -2,7 +2,6 @@ package com.allever.android.sample.retrofit
 
 import android.os.Bundle
 import com.allever.android.sample.R
-import com.allever.android.sample.retrofit.bean.PrintData
 import com.allever.lib.common.app.BaseActivity
 import com.allever.lib.common.util.DLog
 import com.allever.lib.common.util.ToastUtils
@@ -11,8 +10,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.io.IOException
 import java.util.HashMap
 
 class RetrofitTestActivity : BaseActivity() {
@@ -146,7 +143,7 @@ class RetrofitTestActivity : BaseActivity() {
                 //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .getActivityListWithHeader("P3GD0755006")
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -181,7 +178,7 @@ class RetrofitTestActivity : BaseActivity() {
 //                .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .getActivityList("P3GD0755006")
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -203,7 +200,7 @@ class RetrofitTestActivity : BaseActivity() {
                 //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .downloadBigFile()
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -225,7 +222,7 @@ class RetrofitTestActivity : BaseActivity() {
                 //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .getWeatherWithUrl("http://t.weather.itboy.net/api/weather/city/101030100")
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -247,7 +244,7 @@ class RetrofitTestActivity : BaseActivity() {
                 //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .getWeather("101030100")
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -269,7 +266,7 @@ class RetrofitTestActivity : BaseActivity() {
                 //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .getActivityList("P3GD0755006")
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -291,7 +288,7 @@ class RetrofitTestActivity : BaseActivity() {
                 //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .postActivityList("P3GD0755006")
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
@@ -314,7 +311,7 @@ class RetrofitTestActivity : BaseActivity() {
                     //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                     .build()
-                    .create(PrintService::class.java)
+                    .create(RetrofitService::class.java)
                     .printConfig()
                     .execute()
             if (response.isSuccessful) {
@@ -332,7 +329,7 @@ class RetrofitTestActivity : BaseActivity() {
                 //要转换则需要添加addConverterFactory
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(PrintService::class.java)
+                .create(RetrofitService::class.java)
                 .printConfig()
                 .enqueue(object : Callback<ResponseBody> {
                     override fun onFailure(call: Call<ResponseBody>, t: Throwable) {

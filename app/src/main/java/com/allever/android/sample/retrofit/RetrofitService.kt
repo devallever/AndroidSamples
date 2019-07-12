@@ -6,7 +6,7 @@ import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
-interface PrintService {
+interface RetrofitService {
     @GET("LotteryPrinterUsb/master/app/src/main/assets/print_config.json")
     fun printConfig(): Call<ResponseBody>
 
