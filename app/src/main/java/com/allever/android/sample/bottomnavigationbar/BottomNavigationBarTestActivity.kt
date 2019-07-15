@@ -11,11 +11,25 @@ class BottomNavigationBarTestActivity: BaseActivity() {
         super.onCreate(savedInstanceState)
 
 //        hideNavigationBar()
-        hideNavigationBar2()
+//        hideNavigationBar2()
+        hideNavigationBar3()
 
         setContentView(R.layout.activity_bottom_navigation_bar_test)
     }
 
+    private fun hideNavigationBar3() {
+        //1. 仅有 View.SYSTEM_UI_FLAG_HIDE_NAVIGATION 上滑显示导航栏1s, 然后消失
+
+        /*
+        2.  View.SYSTEM_UI_FLAG_HIDE_NAVIGATION + View.SYSTEM_UI_FLAG_IMMERSIVE
+            上滑显示导航栏，100毫秒消失
+         */
+        val window = window
+        val params = window.attributes
+        params.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                View.SYSTEM_UI_FLAG_IMMERSIVE
+        window.attributes = params
+    }
 
     /***
     View.SYSTEM_UI_FLAG_VISIBLE：显示状态栏，Activity不全屏显示(恢复到有状态的正常情况)。
