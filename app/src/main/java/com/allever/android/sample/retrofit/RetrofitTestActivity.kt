@@ -6,11 +6,16 @@ import com.allever.android.sample.retrofit.bean.PrintData
 import com.allever.lib.common.app.BaseActivity
 import com.allever.lib.common.util.DLog
 import com.allever.lib.common.util.ToastUtils
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import okhttp3.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.HashMap
 
@@ -42,6 +47,46 @@ class RetrofitTestActivity : BaseActivity() {
 //        postAsyncUploadFile3()
         //POST异步上传json
 //        postJson()
+        //GET异步Retrofit + RxJava
+        getAsyncRetrofitAndRxJava()
+    }
+
+    private fun getAsyncRetrofitAndRxJava() {
+        Retrofit.Builder()
+            .baseUrl("https://raw.githubusercontent.com/devallever/")
+            //要转换则需要添加addConverterFactory
+//            .addConverterFactory(GsonConverterFactory.create())
+            //支持RxJava
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build()
+            .create(RetrofitService::class.java)
+            .printConfig()
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe {
+//                //方法返回 Disposable
+//                ToastUtils.show("onNext")
+//                DLog.d("onNext content = ${it.string()}")
+//            }
+            .subscribe(object: Observer<ResponseBody> {
+                override fun onComplete() {
+                    DLog.d("onComplete")
+                }
+
+                override fun onSubscribe(d: Disposable) {
+                    DLog.d("onSubscribe")
+                }
+
+                override fun onNext(response: ResponseBody) {
+                    ToastUtils.show("onNext")
+                    DLog.d("onNext content = ${response.string()}")
+                }
+
+                override fun onError(e: Throwable) {
+                    DLog.d("onError")
+                }
+
+            })
     }
 
     private fun postJson() {
@@ -339,7 +384,7 @@ class RetrofitTestActivity : BaseActivity() {
 //                .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(RetrofitService::class.java)
-                .printConfig()
+                .printConfig("")
                 .execute()
             if (response.isSuccessful) {
                 DLog.d("success content = ${response.body()?.string()}")
@@ -357,7 +402,7 @@ class RetrofitTestActivity : BaseActivity() {
 //                .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RetrofitService::class.java)
-            .printConfig()
+            .printConfig("")
             .enqueue(object : Callback<ResponseBody> {
                 override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
                     ToastUtils.show("onFailure")

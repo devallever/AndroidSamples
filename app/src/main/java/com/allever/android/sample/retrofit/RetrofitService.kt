@@ -1,6 +1,7 @@
 package com.allever.android.sample.retrofit
 
 import com.allever.android.sample.retrofit.bean.PrintData
+import io.reactivex.Observable
 import okhttp3.ResponseBody
 
 import retrofit2.Call
@@ -8,7 +9,10 @@ import retrofit2.http.*
 
 interface RetrofitService {
     @GET("LotteryPrinterUsb/master/app/src/main/assets/print_config.json")
-    fun printConfig(): Call<ResponseBody>
+    fun printConfig(msg: String=""): Call<ResponseBody>
+
+    @GET("LotteryPrinterUsb/master/app/src/main/assets/print_config.json")
+    fun printConfig(): Observable<ResponseBody>
 
     //不行
     @POST("LotteryPrinterUsb/master/app/src/main/assets/print_config.json")
