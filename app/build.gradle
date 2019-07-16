@@ -35,4 +35,7 @@ dependencies {
     //rx
     implementation "io.reactivex.rxjava2:rxjava:$rxJava_version"
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid_version"
+
+    //OkHttp
+//    implementation "com.squareup.okhttp3:okhttp:4.0.1"
 }
