@@ -14,7 +14,33 @@ class OkHttpTestActivity: BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ok_http_test)
 
-        getOkHttpBase()
+        //okhttp get请求
+//        getOkHttpBase()
+        //okhttp post请求
+        postOkHttpBase()
+    }
+
+    private fun postOkHttpBase() {
+        val requestBody = FormBody.Builder()
+            .add("libcode", "P3GD0755006")
+            .add("deviceId", "")
+            .add("cmd", "listSearchActions")
+            .build()
+        val client = OkHttpClient()
+        val request = Request.Builder()
+            .post(requestBody)
+            .url("http://rc.interlib.com.cn:8088/rcrobotsite/rest/web/api/action/mb/mobileApi")
+            .build()
+        client.newCall(request).enqueue(object : Callback{
+            override fun onFailure(call: Call, e: IOException) {
+                Log.d(TAG, "onFailure")
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                Log.d(TAG, "onResponse content = ${response.body()?.string()}")
+            }
+
+        })
     }
 
     private fun getOkHttpBase(){
