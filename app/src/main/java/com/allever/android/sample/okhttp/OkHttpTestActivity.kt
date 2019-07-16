@@ -40,6 +40,7 @@ class OkHttpTestActivity : BaseActivity() {
         val request = Request.Builder()
             .post(requestBody)
             .url("http://27.54.249.252:8080/SocialServer/ModifyHeadServlet")
+            .addHeader("Cookie", "JSESSIONID=156826495215485624")
             .build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
