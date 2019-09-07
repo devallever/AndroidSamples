@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_http_url_connection_activity_btn_http_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http get"/>
+
+    <Button
+        android:id="@+id/id_http_url_connection_activity_btn_http_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http post(Login)"/>
+    <EditText
+        android:id="@+id/id_http_url_connection_activity_et_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="username"/>
+    <Button
+        android:id="@+id/id_http_url_connection_activity_btn_multipart_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Multipart(Register) "/>
+
+
+    <Button
+        android:id="@+id/id_http_url_connection_activity_btn_like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="like news"/>
+    <Button
+        android:id="@+id/id_http_url_connection_activity_btn_download"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="download"/>
+
+    <Button
+        android:id="@+id/id_http_url_connection_activity_btn_get_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET USER INFO"/>
+
+</LinearLayout>

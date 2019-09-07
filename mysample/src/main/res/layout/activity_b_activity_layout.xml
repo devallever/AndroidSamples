@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorGreen700"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/id_toolbar">
+
+        <View
+            android:id="@+id/id_activity_b_activity_holder_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:transitionName="share"
+            android:background="@color/colorGreen700"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/id_activity_b_activity_fab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@color/colorGreen700"
+            android:transitionName="fab"
+            android:elevation="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/id_activity_b_activity_holder_view"
+            android:layout_marginTop="-26dp"
+            android:layout_alignParentRight="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/id_activity_b_activity_fab"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/id_activity_b_activity_tv_1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="有界波纹"
+                android:gravity="center"
+                android:background="?android:selectableItemBackground"/>
+            <Button
+                android:id="@+id/id_activity_b_activity_btn_2"
+                android:layout_width="match_parent"
+                android:layout_below="@id/id_activity_b_activity_tv_1"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:text="无解波纹"
+                android:gravity="center"
+                android:background="?android:selectableItemBackgroundBorderless"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

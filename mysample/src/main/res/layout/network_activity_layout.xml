@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_network_activity_btn_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="web view"/>
+
+    <Button
+        android:id="@+id/id_network_activity_btn_http_url_connection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="http url connection"/>
+
+    <Button
+        android:id="@+id/id_network_activity_btn_ok_http"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ok http"/>
+
+    <Button
+        android:id="@+id/id_network_activity_btn_xml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解析xml"/>
+    <Button
+        android:id="@+id/id_network_activity_btn_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解析json"/>
+    <Button
+        android:id="@+id/id_network_activity_btn_retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="retrofit"/>
+    <Button
+        android:id="@+id/id_network_activity_btn_best_practice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Best practice"/>
+
+</LinearLayout>

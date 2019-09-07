@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorGreen700"/>
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="切换线程方式"/>
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_flatmap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="flatmap方式"/>
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="map方式"/>
+
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="action方式"/>
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_just"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="just方式"/>
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="from方式"/>
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_base"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="基本方式"/>
+
+    <Button
+        android:id="@+id/id_rx_retrofit_btn_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询xm(RxJava + Retrofit)"/>
+
+    <TextView
+        android:id="@+id/id_rx_retrofit_tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询结果"/>
+
+</LinearLayout>

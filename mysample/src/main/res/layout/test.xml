@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_gravity="left|top"
+        app:layout_widthPercent="50%"
+        app:layout_heightPrecent="50%"
+        android:text="left top"/>
+    <Button
+        android:layout_gravity="left|bottom"
+        app:layout_widthPercent="50%"
+        app:layout_heightPrecent="50%"/>
+    <Button
+        android:layout_gravity="right|top"
+        app:layout_widthPercent="50%"
+        app:layout_heightPrecent="50%"/>
+    <Button
+        android:layout_gravity="right|bottom"
+        app:layout_widthPercent="50%"
+        app:layout_heightPrecent="50%"/>
+
+
+</androidx.percentlayout.widget.PercentFrameLayout>

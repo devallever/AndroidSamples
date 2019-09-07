@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorGreen_300</item>
+        <item name="colorPrimaryDark">@color/colorGreen700</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FruitActivityTheme" parent="AppTheme">
+    </style>
+
+    <!--  -->
+    <style name="AppThemeActionBar" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">@color/colorGreen700</item>
+        <item name="colorPrimary">@color/colorGreen700</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+</resources>

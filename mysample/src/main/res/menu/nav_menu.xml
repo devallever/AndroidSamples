@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/id_nav_menu_item_like"
+            android:icon="@mipmap/ic_favorite_black_24dp"
+            android:title="Like"/>
+        <item
+            android:id="@+id/id_nav_menu_item_alarm"
+            android:icon="@mipmap/ic_alarm_black_24dp"
+            android:title="Alarm"/>
+        <item
+            android:id="@+id/id_nav_menu_item_account"
+            android:icon="@mipmap/ic_account_circle_black_24dp"
+            android:title="Account"/>
+        <item
+            android:id="@+id/id_nav_menu_item_setting"
+            android:icon="@mipmap/ic_build_black_24dp"
+            android:title="Setting"/>
+
+    </group>
+</menu>

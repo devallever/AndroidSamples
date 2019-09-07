@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_broadcast_receiver_activity_btn_standard_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Standard Broadcast"/>
+
+    <Button
+        android:id="@+id/id_broadcast_receiver_activity_btn_ordered_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Ordered Broadcast"/>
+
+    <Button
+        android:id="@+id/id_broadcast_receiver_activity_btn_local_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Local Broadcast"/>
+
+    <Button
+        android:id="@+id/id_broadcast_receiver_activity_btn_broadcast_best_practice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Broadcast Best Practice"/>
+
+</LinearLayout>

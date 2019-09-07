@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorGreen700"/>
+
+    <Button
+        android:id="@+id/id_event_bus_activity_btn_startActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StartActivity"/>
+
+    <TextView
+        android:id="@+id/id_event_bus_activity_tv_reaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="事件响应"/>
+
+</LinearLayout>

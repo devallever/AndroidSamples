@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@id/id_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorGreen700"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_get"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="retrofit get"/>
+
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_post"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="retrofit get"/>
+
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_tongbu"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="同步请求"/>
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_async"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="异步请求"/>
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="先登录"/>
+
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_choose_pic"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="选择图片"/>
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_upload_pic"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="上传单张图片(修改头像)"/>
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_download_pic"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="下载图片"/>
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_download_apk"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="下载apk"/>
+
+            <Button
+                android:id="@+id/id_retrofit_activity_btn_upload_more_pic"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:text="上传多张图片(发布动态)"/>
+
+            <TextView
+                android:id="@+id/id_retrofit_activity_tv_img_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="path:"/>
+            <ImageView
+                android:id="@+id/id_retrofit_activity_iv_img"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"/>
+
+
+            <TextView
+                android:id="@+id/id_retrofit_activity_tv_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="data"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

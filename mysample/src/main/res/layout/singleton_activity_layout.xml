@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorGreen700"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/id_singleton_activity_dcl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="双重锁定DCL"/>
+        <Button
+            android:id="@+id/id_singleton_activity_static"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="静态内部类"/>
+        <Button
+            android:id="@+id/id_singleton_activity_none_singleton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="None Singleton"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

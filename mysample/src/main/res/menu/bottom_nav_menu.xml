@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/id_bottom_navigation_menu_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="H">
+    </item>
+    <item android:id="@+id/id_bottom_navigation_menu_music"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="M">
+    </item>
+    <item android:id="@+id/id_bottom_navigation_menu_photo"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="P">
+    </item>
+
+
+</menu>

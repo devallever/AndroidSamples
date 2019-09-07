@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.allever.mysimple">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application>
+        <activity android:name=".main.MainActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".animator.AnimatorTestActivity"></activity>
+        <activity android:name=".simpleFactory.CalculatorActivity"></activity>
+        <activity android:name=".strategyModel.CashActivity"></activity>
+        <activity android:name=".imageloader.activity.ImageLoaderActivity"></activity>
+        <activity android:name=".decoratorPattern.DecoratorActivity"></activity>
+        <activity android:name=".observerPattern.ObserverActivity"></activity>
+        <activity android:name=".nearbyProject.ui.NearbyNewsActivity"></activity>
+        <activity android:name=".activityTransition.ActivityA"></activity>
+        <activity android:name=".activityTransition.ActivityB"></activity>
+        <activity android:name=".singleton.SingleTonActivity"></activity>
+        <activity android:name=".retrofit.RetrofitActivity"></activity>
+        <activity android:name=".rxAndroid.RxAndroidActivity"></activity>
+        <activity android:name=".rxRetrofit.RxAndroidRetrofitActivity"></activity>
+        <activity android:name=".matetialTest.MaterialActivity"></activity>
+        <activity android:name=".matetialTest.FruitActivity"
+            android:theme="@style/FruitActivityTheme"></activity>
+        <activity android:name=".eventBusTest.EventBusActivity"></activity>
+        <activity android:name=".eventBusTest.SecondActivity"></activity>
+        <activity android:name=".eventBusTest.ThirdActivity"></activity>
+        <activity android:name=".eventBusTest.FourActivity"></activity>
+        <activity android:name=".mvpTest.MvpMainActivity"></activity>
+        <activity android:name=".nearbyProject.ui.NearbyActivity"></activity>
+        <activity android:name=".FirstAndroid.FirstAndroidMainActivity"></activity>
+        <activity android:name=".FirstAndroid.chapter2.FirstActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="FirstActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter2.SecondActivity"
+            android:label="Second Activity"
+            android:theme="@style/AppThemeActionBar"></activity>
+        <activity android:name=".FirstAndroid.chapter2.ThirdActivity">
+            <intent-filter>
+                <action android:name="com.allever.mysimple.FirstAndroid.chapter2.ACTION_START"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="com.allever.mysimple.FirstAndroid.chapter2.MY_CATEGORY"></category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".FirstAndroid.chapter3Ui.Chapter3Activity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="Chapter3Demo">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter3Ui.WidgetActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="WidgetActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter3Ui.LayoutActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="LayoutActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter3Ui.CustomActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="CustomActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter3Ui.SimpleListViewActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="SimpleListViewActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter3Ui.FixListViewActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="FixListViewActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter3Ui.RecyclerViewActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="RecyclerViewActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter4Fragment.FragmentDemoActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="FragmentDemoActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter4Fragment.FragmentTestActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="FragmentTestActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter4Fragment.bestPractice.NewsActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="NewsActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter4Fragment.bestPractice.NewsContentActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="NewsContentActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter5BroadcastReceiver.BroadcastReceiverActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="BroadcastReceiverActivity">
+        </activity>
+        <receiver
+            android:name=".FirstAndroid.chapter5BroadcastReceiver.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".FirstAndroid.chapter5BroadcastReceiver.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.allever.mysimple.FirstAndroid.chapter5BroadcastReceiver.MY_BROADCAST"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name=".FirstAndroid.chapter5BroadcastReceiver.LoginActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="LoginActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter5BroadcastReceiver.LoginSuccessActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="LoginSuccessActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter6DataPersistence.PersistenceActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="PersistenceActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter6DataPersistence.LitePalActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="LitePalActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter8Media.MediaActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="MediaActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter8Media.CameraActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="CameraActivity">
+        </activity>
+        <provider
+            android:authorities="com.allever.mysimple.FirstAndroid.chapter8Media.fileprovider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths">
+
+            </meta-data>
+        </provider>
+
+        <activity android:name=".FirstAndroid.chapter9Network.NetWorkMainActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="NetWorkMainActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter9Network.WebViewActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="WebViewActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter9Network.HttpUrlConnectionActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="HttpUrlConnectionActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter9Network.XMLParseActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="XMLParseActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter9Network.JsonParseActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="JsonParseActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter10Service.ServiceMainActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="ServiceMainActivity">
+        </activity>
+        <activity android:name=".FirstAndroid.chapter10Service.ServiceActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="ServiceActivity">
+        </activity>
+        <service android:name=".FirstAndroid.chapter10Service.MyService"></service>
+        <service android:name=".FirstAndroid.chapter10Service.MyIntentService"></service>
+        <service android:name=".FirstAndroid.chapter10Service.bestPractice.DownloadService"
+            android:exported="true"
+            android:enabled="true">
+        </service>
+<!--        <activity android:name=".FirstAndroid.chapter10Service.bestPractice.DownloadActivity"
+            android:theme="@style/AppThemeActionBar"
+            android:label="DownloadActivity">
+        </activity>-->
+        <activity android:name=".FirstAndroid.chapter12MaterialDesign.MaterialDesignActivity"
+            android:label="MaterialDesign"></activity>
+
+        <activity android:name=".newsDetail.NewsDetailActivity"/>
+    </application>
+
+</manifest>

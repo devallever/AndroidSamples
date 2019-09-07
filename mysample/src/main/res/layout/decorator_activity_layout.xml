@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_decorator_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorGreen700"/>
+    <Spinner
+        android:id="@+id/id_decorator_activity_spinner_choose_cloth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_decorator_activity_toolbar"
+        android:layout_margin="20dp"/>
+
+    <ImageView
+        android:id="@+id/id_decorator_activity_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_below="@id/id_decorator_activity_spinner_choose_cloth"
+        android:src="@mipmap/ic_launcher"/>
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_first_android_chapter_3_btn_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="基础控件"/>
+
+    <Button
+        android:id="@+id/id_first_android_chapter_3_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="百分比布局"/>
+
+    <Button
+        android:id="@+id/id_first_android_chapter_3_btn_custom_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义控件"/>
+
+    <Button
+        android:id="@+id/id_first_android_chapter_3_btn_simple_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单ListView"/>
+
+    <Button
+        android:id="@+id/id_first_android_chapter_3_btn_fix_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="复杂ListView"/>
+
+    <Button
+        android:id="@+id/id_first_android_chapter_3_btn_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recycler View"/>
+
+</LinearLayout>

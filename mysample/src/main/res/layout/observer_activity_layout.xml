@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/colorGreen700"
+        android:layout_height="?actionBarSize"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_toolbar"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp">
+
+        <CheckBox
+            android:id="@+id/id_observer_activity_cb_stock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="看股票同事"/>
+        <CheckBox
+            android:id="@+id/id_observer_activity_cb_nba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="看NBA同事"/>
+        <CheckBox
+            android:id="@+id/id_observer_activity_cb_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="看电视剧同事"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/id_observer_activity_btn_secretary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="秘书"/>
+
+        <Button
+            android:id="@+id/id_observer_activity_btn_boss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Boss"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

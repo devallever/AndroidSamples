@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_animator_test_activity_tv_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alpha"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/id_animator_test_activity_tv_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rotation"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/id_animator_test_activity_tv_translation_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="translationX"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/id_animator_test_activity_tv_translation_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="translationY"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/id_animator_test_activity_tv_scale_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scaleX"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/id_animator_test_activity_tv_animator_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="animator_set"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:id="@+id/id_animator_test_activity_tv_animator_set_xml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="animator_set_xml"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"/>
+
+</LinearLayout>

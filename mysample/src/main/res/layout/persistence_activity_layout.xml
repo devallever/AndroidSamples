@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/id_persistence_activity_et_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/id_persistence_activity_btn_save_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save to file"/>
+
+    <Button
+        android:id="@+id/id_persistence_activity_btn_read_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="read from file"/>
+
+    <Button
+        android:id="@+id/id_persistence_activity_btn_save_preference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="save to preference"/>
+
+    <Button
+        android:id="@+id/id_persistence_activity_btn_read_preference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="read from preference"/>
+
+    <Button
+        android:id="@+id/id_persistence_activity_btn_create_db"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="create database"/>
+
+    <Button
+        android:id="@+id/id_persistence_activity_btn_add_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add data"/>
+    <Button
+        android:id="@+id/id_persistence_activity_btn_update_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update data"/>
+    <Button
+        android:id="@+id/id_persistence_activity_btn_delete_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="delete data"/>
+    <Button
+        android:id="@+id/id_persistence_activity_btn_query_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="query data"/>
+
+    <Button
+        android:id="@+id/id_persistence_activity_btn_lite_pal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="lite pal"/>
+
+</LinearLayout>

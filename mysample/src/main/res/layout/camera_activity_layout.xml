@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_camera_activity_btn_take_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="take photo"/>
+
+    <Button
+        android:id="@+id/id_camera_activity_btn_chose_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="chose photo"/>
+
+    <ImageView
+        android:id="@+id/id_camera_activity_iv"
+        android:layout_width="match_parent"
+        android:src="@mipmap/expensive"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+</LinearLayout>

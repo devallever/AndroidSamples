@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:padding="10dp"
+    android:background="@color/colorGreen700">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/id_nav_header_iv_head"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@mipmap/h_01"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/id_nav_header_tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="devallever@163.com"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/id_nav_header_tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Devallever"
+        android:textColor="@color/white"
+        android:layout_above="@id/id_nav_header_tv_email"/>
+
+</RelativeLayout>

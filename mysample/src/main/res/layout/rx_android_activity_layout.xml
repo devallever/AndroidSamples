@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/id_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorGreen700"/>
+    <Button
+        android:id="@+id/id_rx_android_activity_btn_main_thread"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="主线程"/>
+    <Button
+        android:id="@+id/id_rx_android_activity_btn_async"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="AsyncTask"/>
+    <Button
+        android:id="@+id/id_rx_android_activity_btn_rx_android"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:text="RxAndroid"/>
+
+    <ProgressBar
+        android:id="@+id/id_rx_android_activity_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

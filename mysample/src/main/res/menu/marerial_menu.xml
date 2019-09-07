@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/id_material_menu_item_sms"
+        android:icon="@mipmap/ic_sms_white_24dp"
+        android:title="SMS"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/id_material_menu_item_notification"
+        android:icon="@mipmap/ic_notifications_active_white_24dp"
+        android:title="Notification"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/id_material_menu_item_contact"
+        android:icon="@mipmap/ic_person_outline_white_24dp"
+        android:title="Contacts"
+        app:showAsAction="never"/>
+
+</menu>

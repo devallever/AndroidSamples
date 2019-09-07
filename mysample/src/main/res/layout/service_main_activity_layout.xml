@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/id_service_main_activity_btn_handler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="handler"/>
+
+    <Button
+        android:id="@+id/id_service_main_activity_btn_async_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="async task"/>
+
+    <Button
+        android:id="@+id/id_service_main_activity_btn_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="service"/>
+
+    <Button
+        android:id="@+id/id_service_main_activity_btn_service_best_practice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="service best practice"/>
+
+</LinearLayout>
