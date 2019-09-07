@@ -3,4 +3,15 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="color_default_light">#61dbfd</color>
+    <color name="color_default_dark">#999999</color>
+    <color name="color_text_box">#253443</color>
+    <color name="color_default_blue">#1987cc</color>
+    <color name="color_default_gray">#f1f0ed</color>
+    <color name="color_white">#ffffff</color>
+    <color name="competition_line_alpha_gray">#66eeeeee</color>
+    <color name="competition_line_alpha_blue">#03a9f4</color>
+    <color name="color_hslider_text">#666666</color>
+    <color name="color_hslider_text_light">#61dbfd</color>
 </resources>

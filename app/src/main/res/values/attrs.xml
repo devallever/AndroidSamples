@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="text" format="string"/>
+    <attr name="textColor" format="color"/>
+    <attr name="iconSrc" format="reference"/>
+    <attr name="fontPath" format="string"/>
+
+    <declare-styleable name="LabelView">
+        <attr name="text"/>
+        <attr name="textColor"/>
+        <attr name="iconSrc"/>
+    </declare-styleable>
+    <declare-styleable name="ItemIconView">
+        <attr name="ItemIcon_tv_des" format="string"></attr>
+        <attr name="ItemIcon_tv_unit" format="string"></attr>
+        <attr name="ItemIcon_iv_picture" format="reference"></attr>
+    </declare-styleable>
+    <declare-styleable name="EasyPickerView">
+        <attr name="epvTextSize" format="dimension"/>
+        <attr name="epvTextColor" format="color"/>
+        <attr name="epvTextPadding" format="dimension"/>
+        <attr name="epvTextMaxScale" format="float"/>
+        <attr name="epvTextMinAlpha" format="float"/>
+        <attr name="epvRecycleMode" format="boolean"/>
+        <attr name="epvIsCenter" format="boolean"></attr>
+        <attr name="epvMaxShowNum" format="integer"/>
+        <attr name="epvCenterColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="SlideBar">
+        <attr name="android:textSize"/>
+        <attr name="android:textColor"/>
+        <attr name="slideBar_chooseTextColor" format="color"/>
+        <attr name="slideBar_backgroundColor" format="color"/>
+        <attr name="slideBar_chooseBackgroundColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="HSlider">
+        <attr name="textDefSize" format="dimension|reference"/>
+        <attr name="textBigSize" format="dimension|reference"/>
+    </declare-styleable>
+    <declare-styleable name="ColImgView">
+        <attr name="startColor" format="color"/>
+        <attr name="endColor" format="color"/>
+        <attr name="src" format="reference"/>
+    </declare-styleable>
+
+
+</resources>
