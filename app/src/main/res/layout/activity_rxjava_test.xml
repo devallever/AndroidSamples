@@ -4,4 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/rx_java_test_btn_hide_or_show_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hide or show Navigation Bar"/>
+
 </RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/in_app_float_window_main_btn_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开应用内悬浮窗"/>
+
+    <Button
+        android:id="@+id/in_app_float_window_main_btn_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭应用内悬浮窗"/>
+
+</LinearLayout>
