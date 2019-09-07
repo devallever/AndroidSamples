@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--
+    <VideoView
+        android:id="@+id/id_sport_main_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+-->
+
+<!--    <SurfaceView
+        android:id="@+id/id_sport_main_surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+
+<!--    <io.vov.vitamio.widget.CenterLayout
+        android:id="@+id/dd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <io.vov.vitamio.widget.VideoView
+            android:id="@+id/id_sport_main_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </io.vov.vitamio.widget.CenterLayout>-->
+
+    <!--<io.vov.vitamio.widget.VideoView
+        android:id="@+id/id_sport_main_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <com.allever.allsample.vodeotest.FullScreenVideoView
+        android:id="@+id/id_sport_main_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/id_sport_main_tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:gravity="center"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"/>
+
+</RelativeLayout>

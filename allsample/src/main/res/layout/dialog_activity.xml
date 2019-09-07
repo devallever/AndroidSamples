@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/dialog_activity_btn"
+            android:id="@+id/id_dialog_activity_btn_base_alert_dialog"
+            android:text="Base AlertDialog"/>
+        <Button
+            style="@style/dialog_activity_btn"
+            android:id="@+id/id_dialog_activity_btn_custom_view_alert_dialog"
+            android:text="Custom View AlertDialog"/>
+
+    </LinearLayout>
+
+</ScrollView>

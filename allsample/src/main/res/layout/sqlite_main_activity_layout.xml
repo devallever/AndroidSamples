@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/id_sqlite_main_activity_et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Book Name"/>
+    <EditText
+        android:id="@+id/id_sqlite_main_activity_et_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ISBN"/>
+
+    <EditText
+        android:id="@+id/id_sqlite_main_activity_et_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"/>
+    <EditText
+        android:id="@+id/id_sqlite_main_activity_et_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Count"/>
+    <EditText
+        android:id="@+id/id_sqlite_main_activity_et_condiction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Qury Condiction"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/id_sqlite_main_activity_btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="增"/>
+
+        <Button
+            android:id="@+id/id_sqlite_main_activity_btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删"/>
+        <Button
+            android:id="@+id/id_sqlite_main_activity_btn_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="改"/>
+        <Button
+            android:id="@+id/id_sqlite_main_activity_btn_query"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/id_sqlite_main_activity_btn_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create"/>
+    <TextView
+        android:id="@+id/id_sqlite_main_activity_tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="result"/>
+
+</LinearLayout>

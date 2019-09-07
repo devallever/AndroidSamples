@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="layout方式"
+        android:textColor="@color/colorPrimary"/>
+    <com.allever.allsample.scroll.DragViewLayout
+        android:id="@+id/id_ll_layout"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="offsetLeftRight And offsetTopBottom"/>
+    <com.allever.allsample.scroll.DragViewOffset
+        android:id="@+id/id_ll_offset"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#0000ff"
+        android:text="LayoutParams方式"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.allever.allsample.scroll.DragViewLayoutParams
+            android:id="@+id/id_ll_params"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#0000ff"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ff0000"
+        android:text="scrollTo And ScrollBy方式"/>
+    <com.allever.allsample.scroll.DragViewScrollToBy
+        android:id="@+id/id_ll_scroll_to_by"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ff0000"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#00ff00"
+        android:text="Scroller方式"/>
+    <com.allever.allsample.scroll.DragViewScroller
+        android:id="@+id/id_ll_scroller"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:background="#00ff00"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="属性动画方式"/>
+    <LinearLayout
+        android:id="@+id/id_ll_animation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ViewDragHelper方式"/>
+    <LinearLayout
+        android:id="@+id/id_ll_view_drag_helper"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary"/>
+
+
+
+</LinearLayout>

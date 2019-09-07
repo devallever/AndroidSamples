@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/id_ok_http_activity_et_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:layout_margin="2dp"/>
+
+        <EditText
+            android:id="@+id/id_ok_http_activity_et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:layout_margin="2dp"/>
+
+        <TextView
+            android:id="@+id/id_ok_http_activity_tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="not login"
+            android:layout_margin="2dp"
+            android:paddingLeft="2dp"/>
+
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_login_get"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="login get"/>
+
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_login_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="login post"/>
+
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_logout_tong_bu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="logout 同步"/>
+
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_logout_yi_bu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="logout 异步"/>
+
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_choose_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="choose pic"/>
+        <ImageView
+            android:id="@+id/id_ok_http_activity_iv_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"/>
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_modify_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="modify head"/>
+        <EditText
+            android:id="@+id/id_ok_http_activity_et_news_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="news content"/>
+
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_add_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add news with 3 pic"/>
+
+        <Button
+            android:id="@+id/id_ok_http_activity_btn_download_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Download pic"/>
+
+        <ImageView
+            android:id="@+id/id_ok_http_activity_iv_download_pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+</ScrollView>
