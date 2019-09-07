@@ -13,7 +13,15 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -26,6 +34,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
 
+
+    implementation 'androidx.multidex:multidex:2.0.1'
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
@@ -43,4 +53,5 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation project(path: ':allsample')
+    implementation project(path: ':mysample')
 }

@@ -1,3 +1,3 @@
-include ':app', ':allsample'
+include ':app', ':allsample', ':mysample'
 include ':common'
 project(':common').projectDir = new File(settingsDir, '../AndroidDependencyLib/common')
