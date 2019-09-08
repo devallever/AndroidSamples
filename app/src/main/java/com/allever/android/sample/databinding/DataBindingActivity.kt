@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ObservableInt
-import com.allever.allsample.BaseActivity
 import com.allever.android.sample.R
 import com.allever.android.sample.databinding.bean.User
-import com.allever.lib.common.util.ToastUtils
+import com.allever.lib.common.app.BaseActivity
 import com.allever.lib.common.util.log.LogUtils
 
 class DataBindingActivity : BaseActivity() {
