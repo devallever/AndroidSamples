@@ -18,6 +18,7 @@
             android:layout_width="100dp"
             android:layout_height="48dp"
             android:text="@{user.name}"
+            android:onClick="onClick"
             android:textColor="@color/black"/>
 
         <TextView
@@ -25,6 +26,7 @@
             android:layout_width="100dp"
             android:layout_height="48dp"
             android:text="@{Integer.toString(user.id)}"
+            android:onClick="onClick"
             android:textColor="@color/black"/>
     </LinearLayout>
 
