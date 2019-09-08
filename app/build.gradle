@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -28,12 +30,17 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common')
 
+    implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
 
     implementation 'androidx.multidex:multidex:2.0.1'
     //retrofit
@@ -53,5 +60,4 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation project(path: ':allsample')
-    implementation project(path: ':mysample')
 }
