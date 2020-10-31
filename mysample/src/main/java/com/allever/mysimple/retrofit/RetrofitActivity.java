@@ -251,6 +251,7 @@ public class RetrofitActivity extends BaseActivity implements View.OnClickListen
         String fileName = "download.apk";
         try {
             FileUtil.saveFile(CommentUtil.inputStramToByte(body.byteStream()),dir,fileName);
+
         }catch (Exception e){
             e.printStackTrace();
         }
